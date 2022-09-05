@@ -3,10 +3,18 @@
 
 function j1func()
 {
-    /*
+    
     localStorage.removeItem("jid");
-   */
+   
     localStorage.setItem("jid", "JRFA0409");
+}
+
+function j2func()
+{
+    
+    localStorage.removeItem("jid");
+   
+    localStorage.setItem("jid", "JRFA6621");
 }
 
 function fillIn()
@@ -16,8 +24,6 @@ function fillIn()
 
     let code = localStorage.getItem("jid");
     
-    alert(code);
-
     if(items > 0)
     {
         document.getElementById("jrn").value = code; 
@@ -145,15 +151,13 @@ function init()
     
     j1.addEventListener("click", j1func);
 
+    j2.addEventListener("click", j2func);
+
     document.getElementById("error").style.visibility = "hidden";
 
     document.getElementById('form').onsubmit= function() {
         return callfunctions();
     };
-    /*
-    document.getElementById("j1").onclick = function() {
-        return j1func();
-    }
-    */
 }
+
 window.onload = init;
