@@ -1,2 +1,0 @@
-# houseofvera
-Website for Anna
