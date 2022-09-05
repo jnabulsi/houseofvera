@@ -5,7 +5,7 @@ function j1func()
 {
     
     localStorage.removeItem("jid");
-  
+   
     localStorage.setItem("jid", "JRFA0409");
 }
 
@@ -141,19 +141,19 @@ function postCodeValidate()
 function init()
 {
     
-
     fillIn();
     
-    
-    
+    j1.addEventListener("click", j1func);
 
     document.getElementById("error").style.visibility = "hidden";
+
     document.getElementById('form').onsubmit= function() {
         return callfunctions();
     };
+    /*
     document.getElementById("j1").onclick = function() {
         return j1func();
     }
-    
+    */
 }
 window.onload = init;
