@@ -31,12 +31,21 @@ function fillIn()
     let code = localStorage.getItem("jid");
 
     let fname = localStorage.getItem("fname");
+
+    let lname = localStorage.getItem("lname");
+
+    let birthday = localStorage.getItem("birthday");
     
     if(items > 0)
     {
         document.getElementById("jrn").value = code; 
 
         document.getElementById("fname").value = fname;
+
+        document.getElementById("lname").value = lname;
+
+        document.getElementById("birthday").value = birthday;
+
     }
 }
 
@@ -63,6 +72,14 @@ function saveValues()
     var fname = document.getElementById("fname").value;
 
     localStorage.setItem("fname", fname);
+
+    var lname = document.getElementById("lname").value;
+
+    localStorage.setItem("lname", lname);
+
+    var birthday = document.getElementById('birthday').value;
+
+    localStorage.setItem("birthday", birthday);
 
 }
 //function to check if checkbox is selected
