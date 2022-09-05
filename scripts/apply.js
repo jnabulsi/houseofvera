@@ -34,6 +34,7 @@ function fillIn()
 function callfunctions()
 {
 
+
     if(birthdayValidate() == false)
     {
         return false;
@@ -46,6 +47,11 @@ function callfunctions()
     {
         return false;
     }
+}
+
+function saveValues()
+{
+
 }
 
 function checkBoxCheck()
@@ -147,13 +153,15 @@ function postCodeValidate()
 function init()
 {
     
+    document.getElementById("error").style.visibility = "hidden";
+    
     fillIn();
     
     j1.addEventListener("click", j1func);
 
     j2.addEventListener("click", j2func);
 
-    document.getElementById("error").style.visibility = "hidden";
+    
 
     document.getElementById('form').onsubmit= function() {
         return callfunctions();
