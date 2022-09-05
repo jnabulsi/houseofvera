@@ -183,6 +183,11 @@ function postCodeValidate()
 //init function to call all other functions
 function init()
 {
+
+    j1.addEventListener("click", j1func);
+
+    j2.addEventListener("click", j2func);
+
     document.getElementById('form').onsubmit= function() {
         return callfunctions();
     };
@@ -190,9 +195,7 @@ function init()
     hide();
     fillIn();
     
-    j1.addEventListener("click", j1func);
-
-    j2.addEventListener("click", j2func);
+    
     
     
     
