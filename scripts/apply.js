@@ -29,18 +29,20 @@ function fillIn()
     let items = localStorage.length;
 
     let code = localStorage.getItem("jid");
+
+    let fname = localStorage.getItem("fname");
     
     if(items > 0)
     {
         document.getElementById("jrn").value = code; 
+
+        document.getElementById("fname").value = fname;
     }
 }
 
-
+//function to call each of the validation functions
 function callfunctions()
 {
-
-
     if(birthdayValidate() == false)
     {
         return false;
@@ -53,24 +55,29 @@ function callfunctions()
     {
         return false;
     }
+    saveValues();
 }
 
 function saveValues()
 {
+    var fname = document.getElementById("fname").value;
+
+    localStorage.setItem("fname", fname);
 
 }
-
+//function to check if checkbox is selected
 function checkBoxCheck()
 {
+    //if check box is selected and skills txt box is empty 
     if(document.getElementById('skills').checked && (document.getElementById('skillstext').value == ""))
-    {
+    {//give an error
         document.getElementById("error").style.visibility = "visible";
         var message = "Please type other skills or uncheck other skills";
         document.getElementById("error").innerHTML = message;
         return false;
     }
 }
-
+//function to check birthdays are in required range
 function birthdayValidate()
 {
     birthday = document.getElementById('birthday');
@@ -84,7 +91,7 @@ function birthdayValidate()
         return false;
     }
 }
-
+//function to ensure the postcode is correct for each state selection
 function postCodeValidate()
 {
     postcode = document.getElementById("postcode").value;
@@ -156,12 +163,13 @@ function postCodeValidate()
     }
 }
 
+//init function to call all other functions
 function init()
 {
     document.getElementById('form').onsubmit= function() {
         return callfunctions();
     };
-    
+
     hide();
     fillIn();
     
@@ -175,14 +183,3 @@ function init()
 
 window.onload = init;
 
-
-/*
-
-document.getElementById('form').addEventListener("submit", return callfunctions);
-
-
-= function() {
-        return callfunctions();
-    };
-
-*/
