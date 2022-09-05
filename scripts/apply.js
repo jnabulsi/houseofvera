@@ -3,9 +3,9 @@
 
 function j1func()
 {
-    
+    /*
     localStorage.removeItem("jid");
-   
+   */
     localStorage.setItem("jid", "JRFA0409");
 }
 
