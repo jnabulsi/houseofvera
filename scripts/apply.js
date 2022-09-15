@@ -64,15 +64,15 @@ function callfunctions()
 
 function saveValues()
 {
-    var fname = document.getElementById("fname").value;
+    let fname = document.getElementById("fname").value;
 
     localStorage.setItem("fname", fname);
 
-    var lname = document.getElementById("lname").value;
+    let lname = document.getElementById("lname").value;
 
     localStorage.setItem("lname", lname);
 
-    var birthday = document.getElementById('birthday').value;
+    let birthday = document.getElementById('birthday').value;
 
     localStorage.setItem("birthday", birthday);
 
@@ -186,6 +186,8 @@ function init()
     j2.addEventListener("click", j2func);
 
     form.addEventListener("submit", callfunctions);
+
+    alert("test");
 /*
 
     document.getElementById('form').onsubmit= function() {
