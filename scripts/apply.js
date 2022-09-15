@@ -185,7 +185,7 @@ function init()
 
     j2.addEventListener("click", j2func);
 
-    form.addEventListener("onsubmit", callfunctions);
+    form.addEventListener("submit", callfunctions);
 /*
 
     document.getElementById('form').onsubmit= function() {
