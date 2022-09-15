@@ -95,6 +95,7 @@ footer {
     text-align: center;
 }
 .error{
+  visibility: hidden;
   border-style: dashed;
   border-color: red;
   color: red;

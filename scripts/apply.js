@@ -1,11 +1,6 @@
 /*filename apply.js 
 */
 
-function hide()
-{
-    document.getElementById("error").style.visibility = "hidden";
-
-}
 
 function j1func()
 {
@@ -184,6 +179,8 @@ function postCodeValidate()
 function init()
 {
 
+    fillIn();
+
     j1.addEventListener("click", j1func);
 
     j2.addEventListener("click", j2func);
@@ -191,13 +188,6 @@ function init()
     document.getElementById('form').onsubmit= function() {
         return callfunctions();
     };
-
-    hide();
-    fillIn();
-    
-    
-    
-    
     
 }
 
