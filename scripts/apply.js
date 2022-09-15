@@ -162,7 +162,7 @@ function validate()
 function init()
 {
 
-    alert("up1");
+    alert("up2");
 
     fillIn();
 /*
