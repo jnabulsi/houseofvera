@@ -165,11 +165,17 @@ function init()
     alert("up2");
 
     fillIn();
-/*
-    j1.addEventListener("click", j1func);
 
-    j2.addEventListener("click", j2func);
-*/
+    var element = document.getElementById("jobs");
+
+    //If it isn't "undefined" and it isn't "null", then it exists.
+    if(typeof(element) != 'undefined' && element != null){
+        alert('Element exists!');
+        j1.addEventListener("click", j1func);
+
+        j2.addEventListener("click", j2func);
+    }
+
     
     document.getElementById('form').onsubmit= function() {
         return validate();
