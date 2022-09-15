@@ -179,7 +179,6 @@ function postCodeValidate()
 function init()
 {
 
-    alert("test1");
 
     fillIn();
 
