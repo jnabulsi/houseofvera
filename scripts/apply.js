@@ -170,14 +170,15 @@ function init()
 
     j2.addEventListener("click", j2func);
 */
-    form.addEventListener("submit", validate);
+    
+    document.getElementById('form').onsubmit= function() {
+        return validate();
+    };
 
     alert("test2");
 /*
 
-    document.getElementById('form').onsubmit= function() {
-        return callfunctions();
-    };
+    form.addEventListener("submit", validate);
 */    
 }
 
