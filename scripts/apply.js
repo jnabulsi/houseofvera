@@ -162,13 +162,14 @@ function validate()
 function init()
 {
 
-    alert("up");
-    fillIn();
+    alert("up1");
 
+    fillIn();
+/*
     j1.addEventListener("click", j1func);
 
     j2.addEventListener("click", j2func);
-
+*/
     form.addEventListener("submit", validate);
 
     alert("test2");
