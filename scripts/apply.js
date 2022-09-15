@@ -33,6 +33,10 @@ function fillIn()
     
     if(items > 0)
     {
+        if(code == "JRFA6621" || code == "JRFA0409")
+        {
+            document.getElementById("jrn").readOnly = true;
+        }
         document.getElementById("jrn").value = code; 
 
         document.getElementById("fname").value = fname;
@@ -176,7 +180,7 @@ function init()
         j2.addEventListener("click", j2func);
     }
 
-    
+
     document.getElementById('form').onsubmit= function() {
         return validate();
     };
