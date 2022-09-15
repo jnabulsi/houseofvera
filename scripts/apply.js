@@ -44,24 +44,6 @@ function fillIn()
     }
 }
 
-//function to call each of the validation functions
-function callfunctions()
-{
-    if(birthdayValidate() == false)
-    {
-        return false;
-    }
-    if(postCodeValidate() == false)
-    {
-        return false;
-    }
-    if(checkBoxCheck() == false)
-    {
-        return false;
-    }
-    saveValues();
-}
-
 function saveValues()
 {
     let fname = document.getElementById("fname").value;
@@ -77,9 +59,10 @@ function saveValues()
     localStorage.setItem("birthday", birthday);
 
 }
-//function to check if checkbox is selected
-function checkBoxCheck()
+
+function validate()
 {
+
     //if check box is selected and skills txt box is empty 
     if(document.getElementById('skills').checked && (document.getElementById('skillstext').value == ""))
     {//give an error
@@ -88,10 +71,9 @@ function checkBoxCheck()
         document.getElementById("error").innerHTML = message;
         return false;
     }
-}
-//function to check birthdays are in required range
-function birthdayValidate()
-{
+
+
+    //to check birthdays are in required range
     birthday = document.getElementById('birthday');
     var dob =new Date(birthday.value);
     var year  = dob.getFullYear();
@@ -102,10 +84,9 @@ function birthdayValidate()
         document.getElementById("error").innerHTML = message;
         return false;
     }
-}
-//function to ensure the postcode is correct for each state selection
-function postCodeValidate()
-{
+
+    //to ensure the postcode is correct for each state selection
+
     postcode = document.getElementById("postcode").value;
     var state = document.getElementById("states");
     var text = state.options[state.selectedIndex].text;
@@ -173,20 +154,22 @@ function postCodeValidate()
         document.getElementById("error").innerHTML = message;
         return false;
     }
+
+    saveValues();
 }
 
 //init function to call all other functions
 function init()
 {
 
-
+    alert("up");
     fillIn();
 
     j1.addEventListener("click", j1func);
 
     j2.addEventListener("click", j2func);
 
-    form.addEventListener("submit", callfunctions);
+    form.addEventListener("submit", validate);
 
     alert("test2");
 /*
