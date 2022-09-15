@@ -166,7 +166,7 @@ function validate()
 function init()
 {
 
-    alert("up2");
+    alert("up3");
 
     fillIn();
 
