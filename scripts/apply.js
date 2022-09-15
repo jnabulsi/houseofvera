@@ -179,6 +179,8 @@ function postCodeValidate()
 function init()
 {
 
+    alert("test1");
+
     fillIn();
 
     j1.addEventListener("click", j1func);
@@ -187,7 +189,7 @@ function init()
 
     form.addEventListener("submit", callfunctions);
 
-    alert("test");
+    alert("test2");
 /*
 
     document.getElementById('form').onsubmit= function() {
