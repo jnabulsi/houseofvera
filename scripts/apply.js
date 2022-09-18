@@ -28,6 +28,8 @@ function fillIn()
 
     let items = localStorage.length;
 
+    alert("items");
+
     let code = localStorage.getItem("jid");
 
     let fname = localStorage.getItem("fname");
