@@ -78,6 +78,13 @@ function saveValues()
 
     localStorage.setItem("g2", g2);
 
+    let streetAdress = document.getElementById("streetAdress").value;
+
+    localStorage.setItem("streetAdress", streetAdress);
+
+    let suburb = document.getElementById("suburb").value;
+
+    localStorage.setItem("suburb", suburb);
 }
 
 function validate()
@@ -182,7 +189,7 @@ function validate()
 function init()
 {
 
-    alert("up3");
+    alert("up4");
 
     fillIn();
 
@@ -201,7 +208,6 @@ function init()
         return validate();
     };
 
-    alert("test2");
 /*
 
     form.addEventListener("submit", validate);
