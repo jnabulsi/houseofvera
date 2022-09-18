@@ -172,6 +172,7 @@ function saveValues()
 
 function validate()
 {
+    alert("wemade it");
 
     //if check box is selected and skills txt box is empty 
     if(document.getElementById('skills').checked && (document.getElementById('skillstext').value == ""))
@@ -272,7 +273,7 @@ function validate()
 function init()
 {
 
-    alert("up5");
+    alert("up5.1");
 
     fillIn();
 
