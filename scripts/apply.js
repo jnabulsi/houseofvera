@@ -24,7 +24,8 @@ function fillIn()
     let items = localStorage.length;
 
     let code = localStorage.getItem("jid");
-
+    alert(jid);
+    alert(code);
     let fname = localStorage.getItem("fname");
 
     let lname = localStorage.getItem("lname");
@@ -65,10 +66,10 @@ function fillIn()
         //if there is a code then set job id to read only
         if(code == "JRFA6621" || code == "JRFA0409")
         {
+            document.getElementById("jrn").value = code; 
             document.getElementById("jrn").readOnly = true;
         }
-        document.getElementById("jrn").value = code; 
-
+    
         document.getElementById("fname").value = fname;
 
         document.getElementById("lname").value = lname;
@@ -302,7 +303,7 @@ function validate()
 function init()
 {
 
-    alert("up11.7");
+    alert("up11.8");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
