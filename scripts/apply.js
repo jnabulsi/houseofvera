@@ -43,6 +43,21 @@ function fillIn()
     
     let postcode = localStorage.getItem("postcode");
 
+    let email = localStorage.getItem("email");
+
+    let phone = localStorage.getItem("phone");
+
+    let s1 = localStorage.getItem("s1");
+    
+    let s2 = localStorage.getItem("s2");
+    
+    let s3 = localStorage.getItem("s3");
+    
+    let s4 = localStorage.getItem("s4");
+    
+    let s5 = localStorage.getItem("s5");
+
+    let otherskills = localStorage.getItem("otherskills");
 
     if(items > 0)
     {
@@ -69,6 +84,18 @@ function fillIn()
         document.getElementById("states").value = states;
 
         document.getElementById("postcode").value = postcode;
+
+        document.getElementById("s1").checked = s1;
+
+        document.getElementById("s2").checked = s2;
+
+        document.getElementById("s3").checked = s3;
+
+        document.getElementById("s4").checked = s4;
+
+        document.getElementById("s5").checked = s5;
+
+        document.getElementById("otherskills").value = otherskills;
     }
 }
 
@@ -109,6 +136,38 @@ function saveValues()
     let postcode = document.getElementById("postcode").value;
 
     localStorage.setItem("postcode", postcode);
+
+    let email = document.getElementById("email").value;
+
+    localStorage.setItem("email", email);
+
+    let phone = document.getElementById("phone").value;
+
+    localStorage.setItem("phone", phone);
+
+    let s1 = document.getElementById("s1").checked;
+
+    localStorage.setItem("s1", s1);
+
+    let s2 = document.getElementById("s2").checked;
+
+    localStorage.setItem("s2", s2);
+
+    let s3 = document.getElementById("s3").checked;
+
+    localStorage.setItem("s3", s3);
+
+    let s4 = document.getElementById("s4").checked;
+
+    localStorage.setItem("s4", s4);
+
+    let s5 = document.getElementById("s5").checked;
+
+    localStorage.setItem("s5", s5);
+
+    let otherskills = document.getElementById("otherskills").value;
+
+    localStorage.setItem("otherskills", otherskills);
 }
 
 function validate()
@@ -206,6 +265,7 @@ function validate()
         return false;
     }
 
+    localStorage.clear();
     saveValues();
 }
 
@@ -221,7 +281,6 @@ function init()
 
     //If it isn't "undefined" and it isn't "null", then it exists.
     if(typeof(element) != 'undefined' && element != null){
-        alert('Element exists!');
         j1.addEventListener("click", j1func);
 
         j2.addEventListener("click", j2func);
