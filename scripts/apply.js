@@ -308,7 +308,7 @@ function init()
     alert("up12.2");
 
     //function to fill in each of the form parts if they are in local storage
-    fillIn();
+    
 
     var element = document.getElementById("jobs");
 
@@ -318,6 +318,11 @@ function init()
         j1.addEventListener("click", j1func);
 
         j2.addEventListener("click", j2func);
+    }
+
+    else
+    {
+        fillIn();
     }
 
     //call the validate function on submit of the form
