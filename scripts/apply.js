@@ -28,8 +28,6 @@ function fillIn()
 
     let items = localStorage.length;
 
-    alert(items);
-
     let code = localStorage.getItem("jid");
 
     let fname = localStorage.getItem("fname");
@@ -179,7 +177,6 @@ function saveValues()
 
     localStorage.setItem("s1", s1);
 
-    alert(s1);
 
     let s2 = document.getElementById("s2").checked;
 
@@ -201,13 +198,11 @@ function saveValues()
 
     localStorage.setItem("skillstext", skillstext);
 
-    alert("should have saved values by now");
 }
 
 //function to validate the form entry to error check
 function validate()
 {
-    alert("validate start");
 
     //if check box is selected and skills txt box is empty 
     if(document.getElementById('s5').checked && (document.getElementById('skillstext').value == ""))
@@ -300,7 +295,6 @@ function validate()
         document.getElementById("error").innerHTML = message;
         return false;
     }
-    alert("callinf save values");
     saveValues();
 }
 
@@ -308,7 +302,7 @@ function validate()
 function init()
 {
 
-    alert("up11.4");
+    alert("up11.5");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
