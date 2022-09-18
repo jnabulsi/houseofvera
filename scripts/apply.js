@@ -64,7 +64,7 @@ function fillIn()
 
         document.getElementById("streetAdress").value = streetAdress;
 
-        document.getElementById("subrub").value = suburb;
+        document.getElementById("suburb").value = suburb;
 
         document.getElementById("states").value = states;
 
@@ -102,7 +102,7 @@ function saveValues()
 
     localStorage.setItem("suburb", suburb);
 
-    let state = document.getElementById("states").value;
+    let states = document.getElementById("states").value;
 
     localStorage.setItem("states", states);
 
