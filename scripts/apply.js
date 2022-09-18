@@ -30,6 +30,10 @@ function fillIn()
     let lname = localStorage.getItem("lname");
 
     let birthday = localStorage.getItem("birthday");
+
+    let g1 = localStorage.getItem("g1");
+
+    let g2 = localStorage.getItem("g2");
     
     if(items > 0)
     {
@@ -44,6 +48,10 @@ function fillIn()
         document.getElementById("lname").value = lname;
 
         document.getElementById("birthday").value = birthday;
+
+        document.getElementById("g1").checked = g1;
+
+        document.getElementById("g2").checked = g2;
 
     }
 }
@@ -61,6 +69,14 @@ function saveValues()
     let birthday = document.getElementById('birthday').value;
 
     localStorage.setItem("birthday", birthday);
+
+    let g1 = document.getElementById("g1").checked;
+
+    localStorage.setItem("g1", g1);
+    
+    let g2 = document.getElementById("g2").checked;
+
+    localStorage.setItem("g2", g2);
 
 }
 
