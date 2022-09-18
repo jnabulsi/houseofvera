@@ -30,9 +30,41 @@ function fillIn()
     let lname = localStorage.getItem("lname");
 
     let birthday = localStorage.getItem("birthday");
+
+    let g1 = localStorage.getItem("g1");
+
+    let g2 = localStorage.getItem("g2");
+
+    let streetAdress = localStorage.getItem("streetAdress");
+
+    let suburb = localStorage.getItem("suburb");
+
+    let states = localStorage.getItem("states");
     
+    let postcode = localStorage.getItem("postcode");
+
+    let email = localStorage.getItem("email");
+
+    let phone = localStorage.getItem("phone");
+
+    let s1 = localStorage.getItem("s1");
+    
+    let s2 = localStorage.getItem("s2");
+    
+    let s3 = localStorage.getItem("s3");
+    
+    let s4 = localStorage.getItem("s4");
+    
+    let s5 = localStorage.getItem("s5");
+
+    let otherskills = localStorage.getItem("otherskills");
+
     if(items > 0)
     {
+        if(code == "JRFA6621" || code == "JRFA0409")
+        {
+            document.getElementById("jrn").readOnly = true;
+        }
         document.getElementById("jrn").value = code; 
 
         document.getElementById("fname").value = fname;
@@ -41,6 +73,29 @@ function fillIn()
 
         document.getElementById("birthday").value = birthday;
 
+        document.getElementById("g1").checked = g1;
+
+        document.getElementById("g2").checked = g2;
+
+        document.getElementById("streetAdress").value = streetAdress;
+
+        document.getElementById("suburb").value = suburb;
+
+        document.getElementById("states").value = states;
+
+        document.getElementById("postcode").value = postcode;
+
+        document.getElementById("s1").checked = s1;
+
+        document.getElementById("s2").checked = s2;
+
+        document.getElementById("s3").checked = s3;
+
+        document.getElementById("s4").checked = s4;
+
+        document.getElementById("s5").checked = s5;
+
+        document.getElementById("otherskills").value = otherskills;
     }
 }
 
@@ -58,6 +113,61 @@ function saveValues()
 
     localStorage.setItem("birthday", birthday);
 
+    let g1 = document.getElementById("g1").checked;
+
+    localStorage.setItem("g1", g1);
+    
+    let g2 = document.getElementById("g2").checked;
+
+    localStorage.setItem("g2", g2);
+
+    let streetAdress = document.getElementById("streetAdress").value;
+
+    localStorage.setItem("streetAdress", streetAdress);
+
+    let suburb = document.getElementById("suburb").value;
+
+    localStorage.setItem("suburb", suburb);
+
+    let states = document.getElementById("states").value;
+
+    localStorage.setItem("states", states);
+
+    let postcode = document.getElementById("postcode").value;
+
+    localStorage.setItem("postcode", postcode);
+
+    let email = document.getElementById("email").value;
+
+    localStorage.setItem("email", email);
+
+    let phone = document.getElementById("phone").value;
+
+    localStorage.setItem("phone", phone);
+
+    let s1 = document.getElementById("s1").checked;
+
+    localStorage.setItem("s1", s1);
+
+    let s2 = document.getElementById("s2").checked;
+
+    localStorage.setItem("s2", s2);
+
+    let s3 = document.getElementById("s3").checked;
+
+    localStorage.setItem("s3", s3);
+
+    let s4 = document.getElementById("s4").checked;
+
+    localStorage.setItem("s4", s4);
+
+    let s5 = document.getElementById("s5").checked;
+
+    localStorage.setItem("s5", s5);
+
+    let otherskills = document.getElementById("otherskills").value;
+
+    localStorage.setItem("otherskills", otherskills);
 }
 
 function validate()
@@ -154,7 +264,7 @@ function validate()
         document.getElementById("error").innerHTML = message;
         return false;
     }
-
+    alert("save");
     saveValues();
 }
 
@@ -162,7 +272,7 @@ function validate()
 function init()
 {
 
-    alert("up2");
+    alert("up5");
 
     fillIn();
 
@@ -170,18 +280,16 @@ function init()
 
     //If it isn't "undefined" and it isn't "null", then it exists.
     if(typeof(element) != 'undefined' && element != null){
-        alert('Element exists!');
         j1.addEventListener("click", j1func);
 
         j2.addEventListener("click", j2func);
     }
 
-    
+
     document.getElementById('form').onsubmit= function() {
         return validate();
     };
 
-    alert("test2");
 /*
 
     form.addEventListener("submit", validate);
