@@ -1,7 +1,7 @@
 /*filename apply.js 
 */
 
-//function to fill in the form with the fist job code
+
 function j1func()
 {
     
@@ -10,7 +10,6 @@ function j1func()
     localStorage.setItem("jid", "JRFA0409");
 }
 
-//function to fill in the form with the second job code
 function j2func()
 {
     
@@ -19,16 +18,10 @@ function j2func()
     localStorage.setItem("jid", "JRFA6621");
 }
 
-
-//function to fill in the form from local storage
 function fillIn()
 {
     
-    //populate variables from local storage
-
     let items = localStorage.length;
-
-    alert(items);
 
     let code = localStorage.getItem("jid");
 
@@ -50,26 +43,9 @@ function fillIn()
     
     let postcode = localStorage.getItem("postcode");
 
-    let email = localStorage.getItem("email");
 
-    let phone = localStorage.getItem("phone");
-
-    let s1 = localStorage.getItem("s1");
-    
-    let s2 = localStorage.getItem("s2");
-    
-    let s3 = localStorage.getItem("s3");
-    
-    let s4 = localStorage.getItem("s4");
-    
-    let s5 = localStorage.getItem("s5");
-
-    let skillstext = localStorage.getItem("skillstext");
-
-    
     if(items > 0)
     {
-        //if there is a code then set job id to read only
         if(code == "JRFA6621" || code == "JRFA0409")
         {
             document.getElementById("jrn").readOnly = true;
@@ -88,31 +64,14 @@ function fillIn()
 
         document.getElementById("streetAdress").value = streetAdress;
 
-        document.getElementById("suburb").value = suburb;
+        document.getElementById("subrub").value = suburb;
 
         document.getElementById("states").value = states;
 
         document.getElementById("postcode").value = postcode;
-
-        document.getElementById("email").value = email;
-
-        document.getElementById("phone").value = phone;
-
-        document.getElementById("s1").checked = s1;
-
-        document.getElementById("s2").checked = s2;
-
-        document.getElementById("s3").checked = s3;
-
-        document.getElementById("s4").checked = s4;
-
-        document.getElementById("s5").checked = s5;
-
-        document.getElementById("skillstext").value = skillstext;
     }
 }
 
-//function to save the personal details that have been entered
 function saveValues()
 {
     let fname = document.getElementById("fname").value;
@@ -143,50 +102,15 @@ function saveValues()
 
     localStorage.setItem("suburb", suburb);
 
-    let states = document.getElementById("states").value;
+    let state = document.getElementById("states").value;
 
     localStorage.setItem("states", states);
 
     let postcode = document.getElementById("postcode").value;
 
     localStorage.setItem("postcode", postcode);
-
-    let email = document.getElementById("email").value;
-
-    localStorage.setItem("email", email);
-
-    let phone = document.getElementById("phone").value;
-
-    localStorage.setItem("phone", phone);
-
-    let s1 = document.getElementById("s1").checked;
-
-    localStorage.setItem("s1", s1);
-
-    let s2 = document.getElementById("s2").checked;
-
-    localStorage.setItem("s2", s2);
-
-    let s3 = document.getElementById("s3").checked;
-
-    localStorage.setItem("s3", s3);
-
-    let s4 = document.getElementById("s4").checked;
-
-    localStorage.setItem("s4", s4);
-
-    let s5 = document.getElementById("s5").checked;
-
-    localStorage.setItem("s5", s5);
-
-    let skillstext = document.getElementById("skillstext").value;
-
-    localStorage.setItem("skillstext", skillstext);
-
-    alert("should have saved values by now");
 }
 
-//function to validate the form entry to error check
 function validate()
 {
 
@@ -201,9 +125,9 @@ function validate()
 
 
     //to check birthdays are in required range
-    let birthday = document.getElementById('birthday');
-    let dob =new Date(birthday.value);
-    let year  = dob.getFullYear();
+    birthday = document.getElementById('birthday');
+    var dob =new Date(birthday.value);
+    var year  = dob.getFullYear();
     if(year < 1942 || year > 2007)
     {
         document.getElementById("error").style.visibility = "visible";
@@ -214,9 +138,9 @@ function validate()
 
     //to ensure the postcode is correct for each state selection
 
-    let postcode = document.getElementById("postcode").value;
-    let state = document.getElementById("states");
-    let text = state.options[state.selectedIndex].text;
+    postcode = document.getElementById("postcode").value;
+    var state = document.getElementById("states");
+    var text = state.options[state.selectedIndex].text;
 
     if(text == "VIC" && !((postcode > 2999 && postcode < 4000)||(postcode > 7999 && postcode < 9000)))
     {
@@ -281,7 +205,7 @@ function validate()
         document.getElementById("error").innerHTML = message;
         return false;
     }
-    alert("callinf save values");
+
     saveValues();
 }
 
@@ -289,29 +213,29 @@ function validate()
 function init()
 {
 
-    alert("up11");
+    alert("up5");
 
-    //function to fill in each of the form parts if they are in local storage
     fillIn();
-
-    alert("got past fill in");
 
     var element = document.getElementById("jobs");
 
     //If it isn't "undefined" and it isn't "null", then it exists.
     if(typeof(element) != 'undefined' && element != null){
+        alert('Element exists!');
         j1.addEventListener("click", j1func);
 
         j2.addEventListener("click", j2func);
     }
 
-    alert("got down to here");
 
-    //call the validate function on submit of the form
     document.getElementById('form').onsubmit= function() {
         return validate();
     };
- 
+
+/*
+
+    form.addEventListener("submit", validate);
+*/    
 }
 
 window.onload = init;
