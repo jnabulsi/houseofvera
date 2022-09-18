@@ -192,7 +192,7 @@ function validate()
     alert("validate start");
 
     //if check box is selected and skills txt box is empty 
-    if(document.getElementById('skills').checked && (document.getElementById('skillstext').value == ""))
+    if(document.getElementById('s5').checked && (document.getElementById('skillstext').value == ""))
     {//give an error
         document.getElementById("error").style.visibility = "visible";
         var message = "Please type other skills or uncheck other skills";
@@ -290,7 +290,7 @@ function validate()
 function init()
 {
 
-    alert("up11");
+    alert("up11.1");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
