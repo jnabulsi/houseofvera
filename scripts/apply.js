@@ -67,6 +67,7 @@ function fillIn()
         //if there is a code then set job id to read only
         if(code == "JRFA6621" || code == "JRFA0409")
         {
+            document.getElementById("jrn").readOnly = false;
             document.getElementById("jrn").value = code; 
             document.getElementById("jrn").readOnly = true;
         }
@@ -304,7 +305,7 @@ function validate()
 function init()
 {
 
-    alert("up12");
+    alert("up12.1");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
