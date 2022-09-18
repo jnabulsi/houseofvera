@@ -163,6 +163,8 @@ function saveValues()
 
     localStorage.setItem("s1", s1);
 
+    alert(s1);
+
     let s2 = document.getElementById("s2").checked;
 
     localStorage.setItem("s2", s2);
