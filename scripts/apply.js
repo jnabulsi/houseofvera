@@ -213,7 +213,7 @@ function validate()
 function init()
 {
 
-    alert("up5");
+    alert("up6");
 
     fillIn();
 
