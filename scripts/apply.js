@@ -99,7 +99,7 @@ function fillIn()
         document.getElementById("phone").value = phone;
 
         alert(s1);
-        if(s1 != false)
+        if(s1 != "false")
         {
             document.getElementById("s1").checked = s1;
         }
@@ -297,7 +297,7 @@ function validate()
 function init()
 {
 
-    alert("up11.2");
+    alert("up11.3");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
