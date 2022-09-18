@@ -1,7 +1,7 @@
 /*filename apply.js 
 */
 
-
+//function to fill in the form with the fist job code
 function j1func()
 {
     
@@ -10,6 +10,7 @@ function j1func()
     localStorage.setItem("jid", "JRFA0409");
 }
 
+//function to fill in the form with the second job code
 function j2func()
 {
     
@@ -18,6 +19,8 @@ function j2func()
     localStorage.setItem("jid", "JRFA6621");
 }
 
+
+//function to fill in the form from local storage
 function fillIn()
 {
     
@@ -57,7 +60,7 @@ function fillIn()
     
     let s5 = localStorage.getItem("s5");
 
-    let otherskills = localStorage.getItem("otherskills");
+    let skillstext = localStorage.getItem("skillstext");
 
     if(items > 0)
     {
@@ -85,6 +88,10 @@ function fillIn()
 
         document.getElementById("postcode").value = postcode;
 
+        document.getElementById("email").value = email;
+
+        document.getElementById("phone").value = phone;
+
         document.getElementById("s1").checked = s1;
 
         document.getElementById("s2").checked = s2;
@@ -95,7 +102,7 @@ function fillIn()
 
         document.getElementById("s5").checked = s5;
 
-        document.getElementById("otherskills").value = otherskills;
+        document.getElementById("skillstext").value = skillstext;
     }
 }
 
@@ -165,9 +172,9 @@ function saveValues()
 
     localStorage.setItem("s5", s5);
 
-    let otherskills = document.getElementById("otherskills").value;
+    let skillstext = document.getElementById("skillstext").value;
 
-    localStorage.setItem("otherskills", otherskills);
+    localStorage.setItem("skillstext", skillstext);
 }
 
 function validate()
@@ -273,8 +280,9 @@ function validate()
 function init()
 {
 
-    alert("up5");
+    alert("up6");
 
+    //function to fill in each of the form parts if they are in local storage
     fillIn();
 
     var element = document.getElementById("jobs");
@@ -286,15 +294,11 @@ function init()
         j2.addEventListener("click", j2func);
     }
 
-
+    //call the validate function on submit of the form
     document.getElementById('form').onsubmit= function() {
         return validate();
     };
-
-/*
-
-    form.addEventListener("submit", validate);
-*/    
+ 
 }
 
 window.onload = init;
