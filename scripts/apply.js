@@ -1,7 +1,7 @@
 /*filename apply.js 
 */
 
-
+//function to fill in the form with the fist job code
 function j1func()
 {
     
@@ -10,6 +10,7 @@ function j1func()
     localStorage.setItem("jid", "JRFA0409");
 }
 
+//function to fill in the form with the second job code
 function j2func()
 {
     
@@ -18,10 +19,16 @@ function j2func()
     localStorage.setItem("jid", "JRFA6621");
 }
 
+
+//function to fill in the form from local storage
 function fillIn()
 {
     
+    //populate variables from local storage
+
     let items = localStorage.length;
+
+    alert(items);
 
     let code = localStorage.getItem("jid");
 
@@ -57,10 +64,12 @@ function fillIn()
     
     let s5 = localStorage.getItem("s5");
 
-    let otherskills = localStorage.getItem("otherskills");
+    let skillstext = localStorage.getItem("skillstext");
 
+    
     if(items > 0)
     {
+        //if there is a code then set job id to read only
         if(code == "JRFA6621" || code == "JRFA0409")
         {
             document.getElementById("jrn").readOnly = true;
@@ -85,6 +94,10 @@ function fillIn()
 
         document.getElementById("postcode").value = postcode;
 
+        document.getElementById("email").value = email;
+
+        document.getElementById("phone").value = phone;
+
         document.getElementById("s1").checked = s1;
 
         document.getElementById("s2").checked = s2;
@@ -95,10 +108,11 @@ function fillIn()
 
         document.getElementById("s5").checked = s5;
 
-        document.getElementById("otherskills").value = otherskills;
+        document.getElementById("skillstext").value = skillstext;
     }
 }
 
+//function to save the personal details that have been entered
 function saveValues()
 {
     let fname = document.getElementById("fname").value;
@@ -165,14 +179,17 @@ function saveValues()
 
     localStorage.setItem("s5", s5);
 
-    let otherskills = document.getElementById("otherskills").value;
+    let skillstext = document.getElementById("skillstext").value;
 
-    localStorage.setItem("otherskills", otherskills);
+    localStorage.setItem("skillstext", skillstext);
+
+    alert("should have saved values by now");
 }
 
+//function to validate the form entry to error check
 function validate()
 {
-    alert("wemade it");
+    alert("validate start");
 
     //if check box is selected and skills txt box is empty 
     if(document.getElementById('skills').checked && (document.getElementById('skillstext').value == ""))
@@ -185,9 +202,9 @@ function validate()
 
 
     //to check birthdays are in required range
-    birthday = document.getElementById('birthday');
-    var dob =new Date(birthday.value);
-    var year  = dob.getFullYear();
+    let birthday = document.getElementById('birthday');
+    let dob =new Date(birthday.value);
+    let year  = dob.getFullYear();
     if(year < 1942 || year > 2007)
     {
         document.getElementById("error").style.visibility = "visible";
@@ -198,9 +215,9 @@ function validate()
 
     //to ensure the postcode is correct for each state selection
 
-    postcode = document.getElementById("postcode").value;
-    var state = document.getElementById("states");
-    var text = state.options[state.selectedIndex].text;
+    let postcode = document.getElementById("postcode").value;
+    let state = document.getElementById("states");
+    let text = state.options[state.selectedIndex].text;
 
     if(text == "VIC" && !((postcode > 2999 && postcode < 4000)||(postcode > 7999 && postcode < 9000)))
     {
@@ -265,7 +282,7 @@ function validate()
         document.getElementById("error").innerHTML = message;
         return false;
     }
-    alert("save");
+    alert("callinf save values");
     saveValues();
 }
 
@@ -273,8 +290,9 @@ function validate()
 function init()
 {
 
-    alert("up5.1");
+    alert("up11");
 
+    //function to fill in each of the form parts if they are in local storage
     fillIn();
 
     var element = document.getElementById("jobs");
@@ -286,15 +304,11 @@ function init()
         j2.addEventListener("click", j2func);
     }
 
-
+    //call the validate function on submit of the form
     document.getElementById('form').onsubmit= function() {
         return validate();
     };
-
-/*
-
-    form.addEventListener("submit", validate);
-*/    
+ 
 }
 
 window.onload = init;
