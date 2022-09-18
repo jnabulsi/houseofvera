@@ -98,6 +98,8 @@ function fillIn()
 
         document.getElementById("phone").value = phone;
 
+        alert(s1);
+        
         document.getElementById("s1").checked = s1;
 
         document.getElementById("s2").checked = s2;
