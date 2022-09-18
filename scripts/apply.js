@@ -201,9 +201,9 @@ function validate()
 
 
     //to check birthdays are in required range
-    birthday = document.getElementById('birthday');
-    var dob =new Date(birthday.value);
-    var year  = dob.getFullYear();
+    let birthday = document.getElementById('birthday');
+    let dob =new Date(birthday.value);
+    let year  = dob.getFullYear();
     if(year < 1942 || year > 2007)
     {
         document.getElementById("error").style.visibility = "visible";
@@ -214,9 +214,9 @@ function validate()
 
     //to ensure the postcode is correct for each state selection
 
-    postcode = document.getElementById("postcode").value;
-    var state = document.getElementById("states");
-    var text = state.options[state.selectedIndex].text;
+    let postcode = document.getElementById("postcode").value;
+    let state = document.getElementById("states");
+    let text = state.options[state.selectedIndex].text;
 
     if(text == "VIC" && !((postcode > 2999 && postcode < 4000)||(postcode > 7999 && postcode < 9000)))
     {
@@ -289,10 +289,12 @@ function validate()
 function init()
 {
 
-    alert("up10");
+    alert("up11");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
+
+    alert("got past fill in");
 
     var element = document.getElementById("jobs");
 
@@ -302,6 +304,8 @@ function init()
 
         j2.addEventListener("click", j2func);
     }
+
+    alert("got down to here");
 
     //call the validate function on submit of the form
     document.getElementById('form').onsubmit= function() {
