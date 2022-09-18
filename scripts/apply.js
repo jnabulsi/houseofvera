@@ -278,7 +278,6 @@ function validate()
         return false;
     }
 
-    //localStorage.clear();
     saveValues();
 }
 
@@ -286,7 +285,7 @@ function validate()
 function init()
 {
 
-    alert("up7");
+    alert("up8");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
