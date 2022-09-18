@@ -24,7 +24,7 @@ function fillIn()
     let items = localStorage.length;
 
     let code = localStorage.getItem("jid");
-    alert(jid);
+    
     alert(code);
     let fname = localStorage.getItem("fname");
 
@@ -303,7 +303,7 @@ function validate()
 function init()
 {
 
-    alert("up11.8");
+    alert("up11.9");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
