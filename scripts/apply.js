@@ -295,6 +295,7 @@ function validate()
         document.getElementById("error").innerHTML = message;
         return false;
     }
+    localStorage.clear();
     saveValues();
 }
 
@@ -302,7 +303,7 @@ function validate()
 function init()
 {
 
-    alert("up11.5");
+    alert("up11.6daner");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
