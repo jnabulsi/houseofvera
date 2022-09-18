@@ -182,6 +182,8 @@ function saveValues()
     let skillstext = document.getElementById("skillstext").value;
 
     localStorage.setItem("skillstext", skillstext);
+
+    alert("should have saved values by now");
 }
 
 //function to validate the form entry to error check
@@ -279,7 +281,7 @@ function validate()
         document.getElementById("error").innerHTML = message;
         return false;
     }
-
+    alert("callinf save values");
     saveValues();
 }
 
@@ -287,7 +289,7 @@ function validate()
 function init()
 {
 
-    alert("up9");
+    alert("up10");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
