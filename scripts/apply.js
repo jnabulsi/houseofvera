@@ -24,6 +24,8 @@ function j2func()
 function fillIn()
 {
     
+    //populate variables from local storage
+
     let items = localStorage.length;
 
     let code = localStorage.getItem("jid");
@@ -62,8 +64,10 @@ function fillIn()
 
     let skillstext = localStorage.getItem("skillstext");
 
+    
     if(items > 0)
     {
+        //if there is a code then set job id to read only
         if(code == "JRFA6621" || code == "JRFA0409")
         {
             document.getElementById("jrn").readOnly = true;
@@ -106,6 +110,7 @@ function fillIn()
     }
 }
 
+//function to save the personal details that have been entered
 function saveValues()
 {
     let fname = document.getElementById("fname").value;
@@ -177,6 +182,7 @@ function saveValues()
     localStorage.setItem("skillstext", skillstext);
 }
 
+//function to validate the form entry to error check
 function validate()
 {
 
@@ -272,7 +278,7 @@ function validate()
         return false;
     }
 
-    localStorage.clear();
+    //localStorage.clear();
     saveValues();
 }
 
