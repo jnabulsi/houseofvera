@@ -129,6 +129,10 @@ function fillIn()
 //function to save the personal details that have been entered
 function saveValues()
 {
+    let code = document.getElementById("jrn").value;
+
+    localStorage.setItem("jid", code);
+
     let fname = document.getElementById("fname").value;
 
     localStorage.setItem("fname", fname);
