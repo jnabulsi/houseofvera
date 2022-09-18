@@ -34,7 +34,16 @@ function fillIn()
     let g1 = localStorage.getItem("g1");
 
     let g2 = localStorage.getItem("g2");
+
+    let streetAdress = localStorage.getItem("streetAdress");
+
+    let suburb = localStorage.getItem("suburb");
+
+    let states = localStorage.getItem("states");
     
+    let postcode = localStorage.getItem("postcode");
+
+
     if(items > 0)
     {
         if(code == "JRFA6621" || code == "JRFA0409")
@@ -53,6 +62,13 @@ function fillIn()
 
         document.getElementById("g2").checked = g2;
 
+        document.getElementById("streetAdress").value = streetAdress;
+
+        document.getElementById("subrub").value = suburb;
+
+        document.getElementById("states").value = states;
+
+        document.getElementById("postcode").value = postcode;
     }
 }
 
@@ -85,6 +101,14 @@ function saveValues()
     let suburb = document.getElementById("suburb").value;
 
     localStorage.setItem("suburb", suburb);
+
+    let state = document.getElementById("states").value;
+
+    localStorage.setItem("states", states);
+
+    let postcode = document.getElementById("postcode").value;
+
+    localStorage.setItem("postcode", postcode);
 }
 
 function validate()
@@ -189,7 +213,7 @@ function validate()
 function init()
 {
 
-    alert("up4");
+    alert("up5");
 
     fillIn();
 
