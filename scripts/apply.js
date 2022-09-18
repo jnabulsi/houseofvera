@@ -82,9 +82,13 @@ function fillIn()
 
         document.getElementById("birthday").value = birthday;
 
-        document.getElementById("g1").checked = g1;
-
-        document.getElementById("g2").checked = g2;
+        if(g1 != "false")
+        {
+            document.getElementById("g1").checked = g1;
+        }if(g2 != "false")
+        {
+            document.getElementById("g2").checked = g2;
+        }
 
         document.getElementById("streetAdress").value = streetAdress;
 
@@ -98,20 +102,27 @@ function fillIn()
 
         document.getElementById("phone").value = phone;
 
-        alert(s1);
         if(s1 != "false")
         {
             document.getElementById("s1").checked = s1;
         }
         
-
-        document.getElementById("s2").checked = s2;
-
-        document.getElementById("s3").checked = s3;
-
-        document.getElementById("s4").checked = s4;
-
-        document.getElementById("s5").checked = s5;
+        if(s2 != "false")
+        {
+            document.getElementById("s2").checked = s2;
+        }
+        if(s3 != "false")
+        {
+            document.getElementById("s3").checked = s3;
+        }
+        if(s4 != "false")
+        {
+            document.getElementById("s4").checked = s4;
+        }
+        if(s5 != "false")
+        {
+            document.getElementById("s5").checked = s5;
+        }
 
         document.getElementById("skillstext").value = skillstext;
     }
@@ -297,7 +308,7 @@ function validate()
 function init()
 {
 
-    alert("up11.3");
+    alert("up11.4");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
