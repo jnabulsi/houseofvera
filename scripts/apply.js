@@ -4,8 +4,6 @@
 //function to fill in the form with the fist job code
 function j1func()
 {
-    
-    localStorage.removeItem("jid");
    
     localStorage.setItem("jid", "JRFA0409");
 }
@@ -13,9 +11,6 @@ function j1func()
 //function to fill in the form with the second job code
 function j2func()
 {
-    
-    localStorage.removeItem("jid");
-   
     localStorage.setItem("jid", "JRFA6621");
 }
 
@@ -307,7 +302,7 @@ function validate()
 function init()
 {
 
-    alert("up11.6daner");
+    alert("up11.7");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
