@@ -4,14 +4,14 @@
 //function to fill in the form with the fist job code
 function j1func()
 {
-    localStorage.removeItem("jid");
+    alert("setting item1");
     localStorage.setItem("jid", "JRFA0409");
 }
 
 //function to fill in the form with the second job code
 function j2func()
 {
-    localStorage.removeItem("jid");
+    alert("setting item2");
     localStorage.setItem("jid", "JRFA6621");
 }
 
@@ -305,7 +305,7 @@ function validate()
 function init()
 {
 
-    alert("up12.1");
+    alert("up12.2");
 
     //function to fill in each of the form parts if they are in local storage
     fillIn();
@@ -314,6 +314,7 @@ function init()
 
     //If it isn't "undefined" and it isn't "null", then it exists.
     if(typeof(element) != 'undefined' && element != null){
+        alert("we in here");
         j1.addEventListener("click", j1func);
 
         j2.addEventListener("click", j2func);
