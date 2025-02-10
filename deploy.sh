@@ -18,6 +18,6 @@ git add .
 git commit -m "$1"
 
 # Push the changes to the remote repository
-git push
+git push -f origin master:tess
 
 echo "Deployment successful!"
