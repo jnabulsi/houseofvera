@@ -1,7 +1,7 @@
 <template>
   <router-link :to="link" class="work-pane" @mouseover="hover = true" @mouseleave="hover = false">
     <img :src="imageSrc" alt="Work Image" class="work-image" />
-    <div class="overlay" v-show="hover">{{ text }}</div>
+    <div class="overlay">{{ text }}</div>
   </router-link>
 </template>
 
@@ -56,5 +56,11 @@ const hover = ref(false);
   font-size: 3rem;
   text-align: center;
   z-index: 200;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.work-pane:hover .overlay {
+  opacity: 1;
 }
 </style>
