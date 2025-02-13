@@ -18,4 +18,3 @@ import WorkPane from '~/components/WorkPane.vue';
   margin: 0;
 }
 </style>
-

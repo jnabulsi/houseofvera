@@ -1,13 +1,13 @@
 <template>
-  <div class="vfx-container">
-    <img src="/img/vfx.webp" alt="VFX" class="vfx-image" />
-    <p class="vfx-text">
+  <div class="design-container">
+    <img src="/img/vfx.webp" alt="Design" class="vfx-image" />
+    <p class="design-text">
       Over the last few years, I have immersed myself in the world of 3D design, learning tools like
       Maya, Blender, Illustrator, Substance Painter, Photoshop, and Unity. From texturing and modeling to shading and
       sculpting, my aim is to bring digital creations to life. I have explored the exciting realm of game development,
       blending creativity with technical expertise to craft immersive experiences.
     </p>
-    <img src="/img/vfx2.webp" alt="VFX2" class="vfx-image" />
+    <img src="/img/vfx2.webp" alt="design2" class="design-image" />
 
     <div class="skills">
       <h1>Skills</h1>
@@ -28,25 +28,21 @@
 </template>
 
 <style scoped>
-.vfx-container {
+.design-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Centers content horizontally */
   text-align: center;
-  /* Centers text inside the container */
-  /* Optional: Adjust for responsiveness */
   margin: 0 auto;
-  /* Centers the container itself */
 }
 
-.vfx-image {
+.design-image {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-.vfx-text {
+.design-text {
   font-size: 2rem;
   line-height: 1.6;
   text-align: center;
