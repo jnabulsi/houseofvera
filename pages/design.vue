@@ -7,7 +7,7 @@
       sculpting, my aim is to bring digital creations to life. I have explored the exciting realm of game development,
       blending creativity with technical expertise to craft immersive experiences.
     </p>
-    <img src="/img/vfx2.webp" alt="design2" class="design-image" />
+    <img src="/img/vfxwide.webp" alt="design2" class="design-image" />
 
     <div class="skills">
       <h1>Skills</h1>
